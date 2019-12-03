@@ -1,0 +1,75 @@
+<div class="container">
+  <form>
+    <div class="card-header">
+      <div class="row">
+        <div class="col-8">
+          Vestuario
+        </div>
+        <div class="col-4">
+          <button type="button" class="btn btn-primary" (click)="adicionar()">Adicionar</button> |
+          <button type="button" class="btn btn-warning" (click)="alterar()">Alterar</button> |
+          <button type="button" class="btn btn-danger" (click)="excluir()">Excluir</button>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-primary" role="alert">
+      {{mens}}
+    </div>
+    <div class="card-body">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCodigo">Código</label>
+          <input type="number" class="form-control" name="inputCodigo" [(ngModel)]="obj.id">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputDescricao">Descrição</label>
+          <input type="text" class="form-control" name="inputDescricao" [(ngModel)]="obj.descricao">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group  col-md-6">
+          <label for="inputQtdeestoque">Qtd em estoque</label>
+          <input type="number" class="form-control" name="inputQtdeestoque" [(ngModel)]="obj.qtdeestoque">
+        </div>
+        <div class="form-group  col-md-6">
+          <label for="inputTamanho">Tamanho</label>
+          <input type="text" class="form-control" name="inputTamanho" [(ngModel)]="obj.tamanho">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group  col-md-6">
+          <label for="inputCor">Cor</label>
+          <input type="text" class="form-control" name="inputCor" [(ngModel)]="obj.cor">
+        </div>
+        <div class="form-group  col-md-6">
+          <label for="inputDatacadastro">Data Cadastro</label>
+          <input type="text" class="form-control" name="inputDatacadastro" [(ngModel)]="obj.datacad">
+        </div>
+      </div>
+
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <table class="table">
+          <th scope="col"> Código </th>
+          <th scope="col"> Descrição </th>
+          <th scope="col"> Qtd Estoque </th>
+          <th scope="col"> Tamanho </th>
+          <th scope="col"> Cor </th>
+          <th scope="col"> Data Cadastro </th>
+          <tr *ngFor="let v of lista">
+            <td>{{v.id}}</td>
+            <td>{{v.descricao}}</td>
+            <td>{{v.qtdeestoque}}</td>
+            <td>{{v.tamanho}}</td>
+            <td>{{v.cor}}</td>
+            <td>{{v.datacad}}</td>
+            <td><button type="button" class="btn btn-secondary" (click)="carregarDados(v)">Carregar</button></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </form>
+</div>

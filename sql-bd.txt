@@ -1,0 +1,8 @@
+create table Vestuario (
+	ves_id serial primary key not null,
+	ves_descricao varchar(50) not null,
+	ves_qtdeEstoque numeric not null,
+	ves_tamanho varchar(20) not null,
+	ves_cor varchar(25) not null,
+	ves_dataCad date not null
+);
